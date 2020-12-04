@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM, { render } from 'react-dom';
-import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Link, NavLink, Route, Switch } from 'react-router-dom';
 // Try to workaround warning in browser console i.e. 
 // Warning: Please use `require("history").createBrowserHistory` instead of `require("history/createBrowserHistory")`. 
 // Support for the latter will be removed in the next major release.
@@ -43,12 +43,12 @@ const NotFoundPage = () => (
 const Header = () => (
     <header>
         <h1>Expensify</h1>
-        <Link to='/'>Dashboard</Link>
-        <Link to='/about'>About</Link>
-        <Link to='/create'>Add Expense</Link>
-        <Link to='/edit'>Edit Expense</Link>
-        <Link to='/help'>Help</Link>
-        <Link to='/foo'>404</Link>
+        <NavLink to='/' activeClassName='is-active' exact={true}>Dashboard</NavLink>
+        <NavLink to='/about' activeClassName='is-active'>About</NavLink>
+        <NavLink to='/create' activeClassName='is-active'>Add Expense</NavLink>
+        <NavLink to='/edit' activeClassName='is-active'>Edit Expense</NavLink>
+        <NavLink to='/help' activeClassName='is-active'>Help</NavLink>
+        <NavLink to='/foo' activeClassName='is-active'>404</NavLink>
     </header>
 );
 
